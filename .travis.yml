@@ -2,20 +2,29 @@ language: python
 python:
     - "3.6"
 
+env:
+  global:
+    - secure: "h4o8g4PFz6soEvbI4VKcB2WB5e1xPhMyk9aGEsr4CzJNjUq8f8XMoQAY+o7qFXX+iiwfK/78pkvIsv3044XJxr8tbNOVeuv8XQ8D28hmIiUI9/i3NFDxA1N+FkeaTOnJFx8ZftHs86A7O6FvNyN306A6dkctvdjSaTajaFgbmahOU0iIzXteY3KKg6WzJCc6t4El1qe2Aq6yO+yW5XJb/2YR45F395yJ/HYQZXGotPlxyGqy/XDV2P+oZDIVQE+fLtNA9Xbi1/e5Ucv3o6Xhfv+aQKv8blIqsmCx6UdTr39SFyWdeHDQYQEjHc8arFFwguyaDmouPMUiPP1fnqSN8y0Nlqa1HAwFm4f2aWnsAmovkvybpikuruQ+vqHo7cfEg6jn6NXw0IyNViUk6Gc8KXUBjslhzj2jZKPEbVJeephhLrvZYXUWxhdwsbeFL8xsIb/vBlMsuC34ERo4QB/FqHMCw5d3y24Jxie1/tX92jQqbLI4ykReRtjGVjlkuEBpXnNPsTIO4dCRcQN9b4U00v+bnpwwWZFdeBnWc1nRtWqxO8GdIZzqPVCP2z67sb8Zf6hb062/Jjtj/rtyJToZavFb48ImtTBZmBFqCtORzIXYUvezxkPW+SsskxsVoNmp+glU0uGHWmBlFuSmfxIJszXEFKSeQVq/Q8a3AXzwPpc="
+    - secure: "eq0XzFrZ2FXGJUwFX4+gMrSISbPTSn8Z98n7WQ+RLVFpaNyvlop3HdK+dYfZcSuQ1414LoWdD2SByYqx6maLhazPkqqiQ8ccByKjs6W0jwo4iEYKJ4AxMh3RUKFnBGFxh/hjqj22PvVOClXYyHs7XXjmjDTyE5Dp0PFAiQ9gl6GL9uVrbmt6c8WDHccKrxlbCnlc96VhHbFzgTGC/gfSrDsCkT/VPPjRcri7IiHBk9yOcQqmXO8tU4lChC91ck40uuvrhKoYUiEoraiVdG3uANvx7yzTY6TM82bHZiIchW4mgGuI0Cm8oYBu6kJAWhLLt6hVhwOc1+dEICG1ZQaZEsbbhQPcdHzNA2x3huLPZTxoNBi5dIyQnQU2UIiWK15QjBOCwGOtdY+Sxjln5DvNOSBftAW9La7ym5etd1rK+QSLJ3/KjUwhXHILHn78uywau+a/9J2wui5aXyRr4qhBIKILlY+nb4gsjAC3C2w7aLQUpq4xyXG4hAT5WtzubBGQU/YT+QAlm13MMBikfUkqHsiVIeS3BglGrgRcMwcaRhYziZ4LRwzW1Z9oanvI7sb36qso/wiY/rkZz0gsreiQoRx/0GnF0OJK95+1f0NRQilN63lwDvTJJ+sb3dU3gwPoH8PJD3/v0BKXHVoP4LP+/25695k35nlk8hJWHuZXdyY="
+    - secure: "AfE4BfXbfcMTE5iyMXaU8SBP9swnxiR20wryY+ArFs2PyUe0/ysB7YHooM2v2NzqcaC/8LnwYWPTkz9GeZP7m6fsA6xBvNR7cPqZSXIElh4c4zlZ2Q+/RIi5h77TnQrId+wsNaGg1gKNNRZfpUnMYauMiwIvfLMvH4GEywKLNhS4olWjDKbk7cGd9323f2hgkNcE17EcWcUqGFTLPnnJWA033avIGgs1i1vT7jV4qsO53w7lENHA05mmZrGiq8OXNlfk5k0UU8qR9B/T8ZtCeP3PDlLUn/VLggkvrV30Lt2gtbx8A+q4uotbR0pWBO8ViqUhFfLDAINtE45rElBF9eYI4uXGyyozy4WM1Cs/IBNsYzMyXnAT1e0e7cErbN5YjPSaJDuR78YXfAt8F40sPBlnMNjFvTiaE/Sb7zzUNW6VsIHXJBMqsqRxp+9s5mJ5wZOO+Biy/VExsJrfJG4rgMe1m+QX2TWwYsVTUDEmxPARH4YGwqZJdmWr1eCqWBPsSwYJrkatuL+ZLQ5jazUWwMt4KthCleNN+8rlKwIbT7NB8qhzWfhtGZ2CvQZPtTAt/fOffyydGrIkOIq5AVPbj1LEoijd58uCs3DafsGHYJCdON7u7A5GnAVjWlVN4/PxFLzJgq1CrRb2NMv9T346MTkJgpWl62/am27jPx0nXKo="
+
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+  - pip install codacy-coverage
+  - pip install codecov
   - python setup.py install
 
 # commands to run tests
 script:
   - coverage run --source=gitlab_stats -m unittest
-  - coverage xml                                                      # For Codacy
   - python setup.py test
 
 after_success:
-  - pandoc --from=markdown --to=rst --output=README.rst README.md     # To remember how to generate .rst
-  - python setup.py sdist bdist_wheel                                 # Create python package
-  - twine upload dist/*                                               # Upload package
-  - coverage report -m                                                # Check coverage
-  - coverage xml                                                      # Generate xml of coverage
+#  - pandoc --from=markdown --to=rst --output=README.rst docs/README.md    # To remember how to generate .rst
+#  - python setup.py sdist bdist_wheel                                     # Create python package
+#  - twine upload dist/*                                                   # Upload package
+#  - coverage report -m                                                    # Check coverage
+  - codecov
+  - coverage xml                                                           # Generate xml of coverage
+  - python-codacy-coverage -r coverage.xml
