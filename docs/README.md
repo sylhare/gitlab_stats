@@ -1,7 +1,7 @@
 ## Gitlab-stats
 
 [![Github](https://img.shields.io/badge/github-gitlab_stats-blue.svg)](https://github.com/Sylhare/gitlab_stats)
-[![PyPI version](https://badge.fury.io/py/gitlab_stats.svg)](https://pypi.org/project/gitlab-stats/)
+[![PyPI version](https://badge.fury.io/py/gitlab-stats.svg)](https://pypi.org/project/gitlab-stats/)
 [![Gitlab](https://img.shields.io/badge/gitlab_api-v4-orange.svg)](https://github.com/Sylhare/gitlab_stats)
 [![Python](https://img.shields.io/badge/python-3.6.x-yellow.svg)](https://github.com/Sylhare/gitlab_stats) 
 [![Build Status](https://travis-ci.org/Sylhare/gitlab_stats.svg?branch=master)](https://travis-ci.org/Sylhare/gitlab_stats)

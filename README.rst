@@ -1,13 +1,8 @@
 Gitlab-stats
 ------------
 
-`Github <https://github.com/Sylhare/gitlab_stats>`__ `PyPI
-version <https://pypi.org/project/gitlab-stats/>`__
-`Gitlab <https://github.com/Sylhare/gitlab_stats>`__
-`Python <https://github.com/Sylhare/gitlab_stats>`__ `Build
-Status <https://travis-ci.org/Sylhare/gitlab_stats>`__
-`codecov <https://codecov.io/gh/Sylhare/gitlab_stats>`__ `Codacy
-Badge <https://www.codacy.com/app/Sylhare/gitlab_stats?utm_source=github.com&utm_medium=referral&utm_content=Sylhare/gitlab_stats&utm_campaign=Badge_Grade>`__
+|Github| |PyPI version| |Gitlab| |Python| |Build Status| |codecov|
+|Codacy Badge|
 
 Get to the gitlab API and generates a report based on the pipeline
 builds. Creates a report for the pipelines of the last two weeks. (On
@@ -26,7 +21,7 @@ Local install with pip3:
 
 .. code:: bash
 
-   pip3 install -e .   
+   pip3 install -e .
 
 In order to make it work:
 
@@ -74,3 +69,18 @@ Here is the help when ``gitlab_stats -h``:
                                https://gitlab.com
      -p PROXY, --proxy PROXY   Add the url of your proxy like
                                'http://my.proxy.url:8083'
+
+.. |Github| image:: https://img.shields.io/badge/github-gitlab_stats-blue.svg
+   :target: https://github.com/Sylhare/gitlab_stats
+.. |PyPI version| image:: https://badge.fury.io/py/gitlab-stats.svg
+   :target: https://pypi.org/project/gitlab-stats/
+.. |Gitlab| image:: https://img.shields.io/badge/gitlab_api-v4-orange.svg
+   :target: https://github.com/Sylhare/gitlab_stats
+.. |Python| image:: https://img.shields.io/badge/python-3.6.x-yellow.svg
+   :target: https://github.com/Sylhare/gitlab_stats
+.. |Build Status| image:: https://travis-ci.org/Sylhare/gitlab_stats.svg?branch=master
+   :target: https://travis-ci.org/Sylhare/gitlab_stats
+.. |codecov| image:: https://codecov.io/gh/Sylhare/gitlab_stats/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/Sylhare/gitlab_stats
+.. |Codacy Badge| image:: https://api.codacy.com/project/badge/Grade/d31f29a89e4f4c929b945d931ba1db26
+   :target: https://www.codacy.com/app/Sylhare/gitlab_stats?utm_source=github.com&utm_medium=referral&utm_content=Sylhare/gitlab_stats&utm_campaign=Badge_Grade
