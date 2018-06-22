@@ -28,3 +28,4 @@ after_success:
   - codecov
   - coverage xml                                                           # Generate xml of coverage
   - python-codacy-coverage -r coverage.xml
+  - pip install gitlab_stats

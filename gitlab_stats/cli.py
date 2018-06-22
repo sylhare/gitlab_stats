@@ -36,18 +36,17 @@ def parse_args(args):
     return parser.parse_args(args)
 
 
-def print_report(project_id, url, proxy):
-    proxy = utils.format_proxy(proxy)
-    gitlab = API(base_url=url, proxies=proxy)
-    utils.print_cli_report(gitlab.get_enhanced_project_info(project_id))
-
-
 def main():
     args = parse_args(sys.argv[1:])
-    print_report(args.id, args.url[0], args.proxy[0])
+    proxy = utils.format_proxy(args.proxy[0])
+    gitlab = API(base_url=args.url[0], proxies=proxy)
+    print("Fetching your project information ...")
+
+    project_info = gitlab.get_enhanced_project_info(args.id)
+    utils.print_cli_report(project_info)
 
     if args.report:
-        print("Reports not yet implemented ¯\_(ツ)_/¯")
+        utils.generate_report(project_info)
 
 
 if __name__ == '__main__':

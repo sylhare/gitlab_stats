@@ -22,7 +22,13 @@ class CLITest(unittest.TestCase):
 
     @tests.api_call
     def test_101_print_report(self):
-        print_report(str(tests.PROJECT_ID), 'https://gitlab.com', tests.PROXY)
+        if tests.PROXY:
+            testargs = ['', str(tests.PROJECT_ID), '-p', tests.PROXY, '-r']
+        else:
+            testargs = ['', str(tests.PROJECT_ID), '-r']
+        with patch.object(sys, 'argv', testargs):
+            main()
+            self.assertTrue(os.path.isfile('output.csv'))
 
     def test_200_parser_id(self):
         parser = parse_args(['123'])
