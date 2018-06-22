@@ -1,8 +1,9 @@
 ## Gitlab-stats
 
 [![Github](https://img.shields.io/badge/github-gitlab_stats-blue.svg)](https://github.com/Sylhare/gitlab_stats)
-![Gitlab](https://img.shields.io/badge/gitlab_api-v4-orange.svg) 
-![Python](https://img.shields.io/badge/python-3.6.x-yellow.svg) 
+[![PyPI version](https://badge.fury.io/py/gitlab_stats.svg)](https://pypi.org/project/gitlab-stats/)
+[![Gitlab](https://img.shields.io/badge/gitlab_api-v4-orange.svg)](https://github.com/Sylhare/gitlab_stats)
+[![Python](https://img.shields.io/badge/python-3.6.x-yellow.svg)](https://github.com/Sylhare/gitlab_stats) 
 [![Build Status](https://travis-ci.org/Sylhare/gitlab_stats.svg?branch=master)](https://travis-ci.org/Sylhare/gitlab_stats)
 [![codecov](https://codecov.io/gh/Sylhare/gitlab_stats/branch/master/graph/badge.svg)](https://codecov.io/gh/Sylhare/gitlab_stats)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d31f29a89e4f4c929b945d931ba1db26)](https://www.codacy.com/app/Sylhare/gitlab_stats?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sylhare/gitlab_stats&amp;utm_campaign=Badge_Grade)
@@ -35,7 +36,7 @@ It is a unique ID that is used by the gitlab REST API to store your project info
 
 Get it in `[your project] > Settings > General > General project settings`
 
-![](../screenshot.png)
+![photo](https://github.com/Sylhare/gitlab_stats/blob/master/docs/screenshot.png)
 
 ### How to use
 

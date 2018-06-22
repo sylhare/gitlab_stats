@@ -3,12 +3,12 @@ from setuptools import setup, find_packages
 with open('README.rst') as file:
     long_description = file.read()
 
-setup(name='gitlab_stats',
-      version='1.0.0',
+setup(name='gitlab-stats',
+      version='1.0.6',
       description='Get gitlab stats',
       long_description=long_description,
       classifiers=[
-          'Development Status :: 3 - Alpha',
+          'Development Status :: 4 - Beta',
           'License :: OSI Approved :: MIT License',
           'Programming Language :: Python :: 3.6',
       ],

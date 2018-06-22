@@ -47,8 +47,8 @@ def get_pipeline_info(elem):
 
 
 def seconds_to_min(seconds):
-    min, sec = divmod(round(seconds), 60)
-    return "{} min {}s".format(round(min), sec)
+    mins, sec = divmod(round(seconds), 60)
+    return "{} min {}s".format(round(mins), sec)
 
 
 def clean_null_from(a_list):

@@ -13,7 +13,7 @@ class APITest(unittest.TestCase):
 
     def tearDown(self):
         elapsed = time.time() - self._started_at
-        print('({}s) - {}'.format(round(elapsed, 2), self.id()[46:]))
+        print('({}s) - {}'.format(round(elapsed, 2), self.id()[36:]))
 
     # -- API connexion and information retrieve
 
@@ -32,7 +32,7 @@ class APITest(unittest.TestCase):
             """ Can't really test this """
             import os
             print(os.environ["NOT_WHERE_TOKEN_IS_STORED"])  # This will raise a key error
-            API()  # Should happen here too when no token in GITLAB_TOKEN
+            API(base_url="https://gitlab.com", proxies=tests.PROXIES)  # key error when no token in GITLAB_TOKEN
 
     @tests.api_call
     def test_004_wrong_token_raise_error(self):

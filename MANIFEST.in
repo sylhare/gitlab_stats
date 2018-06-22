@@ -4,7 +4,7 @@ exclude .coverage
 exclude .travis.yml
 exclude gitlab.env
 exclude docs/README.md
-exclude screenshot.png
+exclude docs/screenshot.png
 include README.rst
 prune .cache
 prune .git

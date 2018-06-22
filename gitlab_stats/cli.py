@@ -16,7 +16,7 @@ from gitlab_stats.wrapper import API
 
 
 def parse_args(args):
-    parser = argparse.ArgumentParser(description="gitlab_stats: Generate a report from gitlab's pipeline metrics")
+    parser = argparse.ArgumentParser(description="gitlab-stats: Generate a report from gitlab's pipeline metrics")
     parser.add_argument("id",
                         help="Put the id of the gitlab project")
     parser.add_argument("-r", "--report",

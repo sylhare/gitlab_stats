@@ -1,10 +1,8 @@
 Gitlab-stats
 ------------
 
-.. figure:: https://img.shields.io/badge/python-3.6.x-yellow.svg
-   :alt: Python
-
-   Python
+|Github| |PyPI version| |Gitlab| |Python| |Build Status| |codecov|
+|Codacy Badge|
 
 Get to the gitlab API and generates a report based on the pipeline
 builds. Creates a report for the pipelines of the last two weeks. (On
@@ -23,7 +21,7 @@ Local install with pip3:
 
 .. code:: bash
 
-   pip3 install -e .   
+   pip3 install -e .
 
 In order to make it work:
 
@@ -39,7 +37,10 @@ store your project information.
 Get it in
 ``[your project] > Settings > General > General project settings``
 
-|image0|
+.. figure:: https://github.com/Sylhare/gitlab_stats/blob/master/docs/screenshot.png
+   :alt: photo
+
+   photo
 
 How to use
 ~~~~~~~~~~
@@ -68,6 +69,3 @@ Here is the help when ``gitlab_stats -h``:
                                https://gitlab.com
      -p PROXY, --proxy PROXY   Add the url of your proxy like
                                'http://my.proxy.url:8083'
-
-.. |image0| image:: ../screenshot.png
-
