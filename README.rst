@@ -1,8 +1,13 @@
 Gitlab-stats
 ------------
 
-|Github| |PyPI version| |Gitlab| |Python| |Build Status| |codecov|
-|Codacy Badge|
+`Github <https://github.com/Sylhare/gitlab_stats>`__ `PyPI
+version <https://pypi.org/project/gitlab-stats/>`__
+`Gitlab <https://github.com/Sylhare/gitlab_stats>`__
+`Python <https://github.com/Sylhare/gitlab_stats>`__ `Build
+Status <https://travis-ci.org/Sylhare/gitlab_stats>`__
+`codecov <https://codecov.io/gh/Sylhare/gitlab_stats>`__ `Codacy
+Badge <https://www.codacy.com/app/Sylhare/gitlab_stats?utm_source=github.com&utm_medium=referral&utm_content=Sylhare/gitlab_stats&utm_campaign=Badge_Grade>`__
 
 Get to the gitlab API and generates a report based on the pipeline
 builds. Creates a report for the pipelines of the last two weeks. (On
@@ -21,7 +26,7 @@ Local install with pip3:
 
 .. code:: bash
 
-   pip3 install -e .
+   pip3 install -e .   
 
 In order to make it work:
 
