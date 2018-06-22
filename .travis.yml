@@ -1,0 +1,21 @@
+language: python
+python:
+    - "3.6"
+
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - python setup.py install
+
+# commands to run tests
+script:
+  - coverage run --source=gitlab_stats -m unittest
+  - coverage xml                                                      # For Codacy
+  - python setup.py test
+
+after_success:
+  - pandoc --from=markdown --to=rst --output=README.rst README.md     # To remember how to generate .rst
+  - python setup.py sdist bdist_wheel                                 # Create python package
+  - twine upload dist/*                                               # Upload package
+  - coverage report -m                                                # Check coverage
+  - coverage xml                                                      # Generate xml of coverage
