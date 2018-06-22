@@ -1,6 +1,11 @@
 ## Gitlab-stats
 
+[![Github](https://img.shields.io/badge/github-gitlab_stats-blue.svg)](https://github.com/Sylhare/gitlab_stats)
+![Gitlab](https://img.shields.io/badge/gitlab_api-v4-orange.svg) 
 ![Python](https://img.shields.io/badge/python-3.6.x-yellow.svg) 
+[![Build Status](https://travis-ci.org/Sylhare/gitlab_stats.svg?branch=master)](https://travis-ci.org/Sylhare/gitlab_stats)
+[![codecov](https://codecov.io/gh/Sylhare/gitlab_stats/branch/master/graph/badge.svg)](https://codecov.io/gh/Sylhare/gitlab_stats)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d31f29a89e4f4c929b945d931ba1db26)](https://www.codacy.com/app/Sylhare/gitlab_stats?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Sylhare/gitlab_stats&amp;utm_campaign=Badge_Grade)
 
 Get to the gitlab API and generates a report based on the pipeline builds.
 Creates a report for the pipelines of the last two weeks. 
@@ -30,7 +35,7 @@ It is a unique ID that is used by the gitlab REST API to store your project info
 
 Get it in `[your project] > Settings > General > General project settings`
 
-![](screenshot.png)
+![](../screenshot.png)
 
 ### How to use
 
