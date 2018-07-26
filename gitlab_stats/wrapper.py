@@ -51,7 +51,7 @@ class API(object):
         raw = self.get(API.PROJECT_URL + "/{}".format(project_id)).json()
         return raw['name']
 
-    def get_all_pipelines_id_of(self, project_id, pages=1):
+    def get_all_pipelines_id(self, project_id, pages=1):
         pipelines = self.get_through_page(
             API.PIPELINES_URL.format(project_id),
             get_pipelines_id,
@@ -59,9 +59,9 @@ class API(object):
         )
         return pipelines
 
-    def get_all_pipelines_info_of(self, project_id, pages=1):
+    def get_all_pipelines_info(self, project_id, pages=1):
         pipelines_info = []
-        pipeline_list = self.get_all_pipelines_id_of(project_id, pages)
+        pipeline_list = self.get_all_pipelines_id(project_id, pages)
 
         for pipeline in pipeline_list:
             lookup_url = API.A_PIPELINE_URL.format(project_id, pipeline)
@@ -72,7 +72,7 @@ class API(object):
     def get_basic_project_info(self, project_id):
         project = {'id': project_id,
                     'name': self.get_project_name(project_id),
-                    'pipelines': self.get_all_pipelines_info_of(project_id)
+                    'pipelines': self.get_all_pipelines_info(project_id)
                     }
         return project
 
