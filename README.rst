@@ -37,10 +37,7 @@ store your project information.
 Get it in
 ``[your project] > Settings > General > General project settings``
 
-.. figure:: https://github.com/Sylhare/gitlab_stats/blob/master/docs/screenshot.png
-   :alt: photo
-
-   photo
+|General project settings|
 
 How to use
 ~~~~~~~~~~
@@ -84,3 +81,4 @@ Here is the help when ``gitlab_stats -h``:
    :target: https://codecov.io/gh/Sylhare/gitlab_stats
 .. |Codacy Badge| image:: https://api.codacy.com/project/badge/Grade/d31f29a89e4f4c929b945d931ba1db26
    :target: https://www.codacy.com/app/Sylhare/gitlab_stats?utm_source=github.com&utm_medium=referral&utm_content=Sylhare/gitlab_stats&utm_campaign=Badge_Grade
+.. |General project settings| image:: https://github.com/Sylhare/gitlab_stats/blob/master/docs/screenshot.png?raw=true

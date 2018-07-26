@@ -36,7 +36,7 @@ It is a unique ID that is used by the gitlab REST API to store your project info
 
 Get it in `[your project] > Settings > General > General project settings`
 
-![photo](https://github.com/Sylhare/gitlab_stats/blob/master/docs/screenshot.png)
+![General project settings](https://github.com/Sylhare/gitlab_stats/blob/master/docs/screenshot.png?raw=true)
 
 ### How to use
 
