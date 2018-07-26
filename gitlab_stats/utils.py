@@ -51,25 +51,11 @@ def seconds_to_min(seconds):
     return "{} min {}s".format(round(mins), sec)
 
 
-def clean_null_from(a_list):
-    a_list = filter(lambda x: x is not None, a_list)
-    return a_list
-
-
 def get_duration_moy(project_info):
     duration = (pipeline['duration'] for pipeline in project_info['pipelines'])
     duration = list(filter(lambda x: x is not None, duration))
 
     return round(sum(duration) / len(duration), 1) if len(duration) else None
-
-
-def get_success_percentagex(project_info):
-    success = 0
-    for pipeline in project_info['pipelines']:
-        if pipeline['status'] == 'success':
-            success += 1
-
-    return round(success * 100 / len(project_info['pipelines']))
 
 
 def get_success_percentage(project_info):
