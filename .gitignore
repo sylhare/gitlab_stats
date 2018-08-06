@@ -10,3 +10,4 @@
 gitlab_stats.egg-info/*
 .DS_Store
 .idea/*
+.cache/*

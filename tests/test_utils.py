@@ -1,5 +1,6 @@
 import tests
 import unittest
+from unittest import mock
 from gitlab_stats.utils import *
 
 
@@ -8,6 +9,10 @@ class UtilsTest(unittest.TestCase):
     def test_001_check_proxy_format(self):
         result = format_proxy("test")
         self.assertEqual({'http': "test", 'https': "test"}, result)
+
+    def test_003_no_token_raise_exception(self):
+        with mock.patch.dict(os.environ, clear=True):
+            self.assertRaises(KeyError, check_token(None))
 
     # -- Project name and id
 
