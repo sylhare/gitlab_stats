@@ -90,5 +90,32 @@ class UtilsTest(unittest.TestCase):
         print_cli_report(tests.PROJECT_INFO_ENHANCED)
 
 
+    def test_220_create_a_csv(self):
+        create_dict_to_csv(tests.PROJECT_INFO_ENHANCED, 'output.csv')
+        self.assertTrue(os.path.isfile('output.csv'))
+
+    def test_221_write_into_a_created_report_do_not_had_headers(self):
+        write_dict_to_csv(tests.PROJECT_INFO_ENHANCED, 'output.csv')
+        with open('output.csv', 'r') as f:
+            result = list(csv.reader(f))
+            self.assertNotEqual(result[0], result[2])
+
+    def test_222_report_regenerated(self):
+        generate_report(tests.PROJECT_INFO_ENHANCED, 'output.csv')
+        with open('output.csv', 'r') as f:
+            result = list(csv.reader(f))
+            self.assertEqual(result[2], result[3])
+        os.remove('output.csv')
+
+    def test_223_report_generated(self):
+        generate_report(tests.PROJECT_INFO_ENHANCED, 'output.csv')
+        with open('output.csv', 'r') as f:
+            result = list(csv.reader(f))
+            self.assertNotEqual(result[0], result[1])
+            with self.assertRaises(IndexError):
+                report_created_so_only_two_rows = result[2]
+        os.remove('output.csv')
+
+
 if __name__ == "__main__":
     unittest.main()

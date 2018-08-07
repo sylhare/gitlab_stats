@@ -1,7 +1,6 @@
 import tests
 import time
 import unittest
-from gitlab_stats.utils import *
 from gitlab_stats.wrapper import API
 
 
@@ -23,13 +22,6 @@ class WrapperTest(unittest.TestCase):
         self.assertEqual(response.status_code, 200,
                          "Can't reach this url, it can be your proxy or a wrong token, set them in a .env file")
 
-    def test_003_no_token_raise_error(self):
-        with self.assertRaises(KeyError):
-            """ Can't really test this """
-            import os
-            print(os.environ["NOT_WHERE_TOKEN_IS_STORED"])  # This will raise a key error
-            API(base_url="https://gitlab.com", proxies=tests.PROXIES)  # key error when no token in GITLAB_TOKEN
-
     @tests.api_call
     def test_004_wrong_token_raise_error(self):
         with self.assertRaises(ConnectionError):
@@ -41,7 +33,7 @@ class WrapperTest(unittest.TestCase):
     @tests.api_call
     def test_010_get_project_name_from_id(self):
         response = self.gaw.get_project_name(tests.PROJECT_ID)
-        self.assertEquals(response, tests.PROJECT_NAME)
+        self.assertEqual(response, tests.PROJECT_NAME)
 
     @tests.api_call
     def test_011_get_all_projects(self):
@@ -98,8 +90,6 @@ class WrapperTest(unittest.TestCase):
         self.assertTrue('status' in response[0])
         self.assertTrue('duration' in response[0])
         self.assertTrue('date' in response[0])
-
-
 
 
 if __name__ == "__main__":
