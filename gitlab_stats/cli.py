@@ -6,8 +6,6 @@ Gitlab_stats:
 Generate a report from gitlab's pipeline metrics
 
 for help:    gitlab_stats -h
-example:     gitlab_stats 4895805
-example:     gitlab_stats 123 -s "https://my_gitlab.com"
 """
 import sys
 import argparse

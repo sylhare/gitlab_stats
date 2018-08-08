@@ -17,7 +17,8 @@ class CLITest(unittest.TestCase):
         else:
             testargs = ['', str(tests.PROJECT_ID)]
         with patch.object(sys, 'argv', testargs):
-            main()
+            result = main()
+            self.assertEqual(result, 0)
 
     @tests.api_call
     def test_101_print_report(self):
@@ -28,6 +29,10 @@ class CLITest(unittest.TestCase):
         with patch.object(sys, 'argv', testargs):
             main()
             self.assertTrue(os.path.isfile('output.csv'))
+
+    def test_102_run_main(self):
+        result = os.system("python "+tests.ROOT_PATH+"/gitlab_stats/cli.py -h")
+        self.assertEqual(result, 0)
 
     def test_200_parser_id(self):
         parser = parse_args(['123'])

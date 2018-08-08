@@ -1,5 +1,6 @@
 import tests
 import unittest
+from io import StringIO
 from unittest import mock
 from gitlab_stats.utils import *
 
@@ -87,8 +88,9 @@ class UtilsTest(unittest.TestCase):
         self.assertTrue('success_percentage' in response)
 
     def test_57_get_report(self):
-        print_cli_report(tests.PROJECT_INFO_ENHANCED)
-
+        with mock.patch('sys.stdout', new=StringIO()) as output:
+            print_cli_report(tests.PROJECT_INFO_ENHANCED)
+            self.assertEqual(output.getvalue().strip()[0], tests.REPORT[0])
 
     def test_220_create_a_csv(self):
         create_dict_to_csv(tests.PROJECT_INFO_ENHANCED, 'output.csv')
@@ -113,7 +115,7 @@ class UtilsTest(unittest.TestCase):
             result = list(csv.reader(f))
             self.assertNotEqual(result[0], result[1])
             with self.assertRaises(IndexError):
-                report_created_so_only_two_rows = result[2]
+                print("report created so there's only two rows: {} should raise en error".format(result[2]))
         os.remove('output.csv')
 
 

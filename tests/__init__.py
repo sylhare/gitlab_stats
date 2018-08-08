@@ -91,3 +91,9 @@ PROJECT_INFO_WITH_ONE_DURATION_NONE = {
 PROJECT_INFO_DURATION_NONE = {
     'pipelines': [{'id': 33844, 'status': 'success', 'duration': None, 'date': '2018-06-12'}]
 }
+
+REPORT = '''======================== Gitlab Project Metrics =========================
+
+    Project name  --------------------------------------  integration-tests
+    Project id  ----------------------------------------  4895805
+'''
