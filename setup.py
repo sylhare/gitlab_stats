@@ -4,7 +4,7 @@ with open('README.rst') as file:
     long_description = file.read()
 
 setup(name='gitlab-stats',
-      version='1.1.3',
+      version='1.1.4',
       description='Get gitlab stats',
       long_description=long_description,
       classifiers=[
