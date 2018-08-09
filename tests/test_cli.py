@@ -7,25 +7,16 @@ from unittest.mock import patch
 
 class CLITest(unittest.TestCase):
 
-    def setUp(self):
-        pass
-
-    @tests.api_call
-    def test_100_parse_args(self):
-        test_args = ['gitlab_stats', str(tests.PROJECT_ID)]
-        with patch.object(sys, 'argv', test_args):
-            main()
+    def test_100_run_main(self):
+        result = os.system("python {}/gitlab_stats/cli.py -h".format(tests.ROOT_PATH))
+        self.assertEqual(result, 0)
 
     @tests.api_call
     def test_101_print_report(self):
-        test_args = ['-r', str(tests.PROJECT_ID)]
+        test_args = ['', '-r', str(tests.PROJECT_ID)]
         with patch.object(sys, 'argv', test_args):
             main()
         self.assertTrue(os.path.isfile('output.csv'))
-
-    def test_102_run_main(self):
-        result = os.system("python {}/gitlab_stats/cli.py -h".format(tests.ROOT_PATH))
-        self.assertEqual(result, 0)
 
     def test_200_parser_id(self):
         parser = parse_args(['123'])

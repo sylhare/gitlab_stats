@@ -2,13 +2,6 @@ import os
 import unittest
 from datetime import datetime
 
-try:
-    PROXY = os.environ["PROXY"]   # Add a PROXY env variable if you want to run the test behind a proxy.
-except KeyError:
-    PROXY = ''
-
-PROXIES = {'http': PROXY, 'https': PROXY}
-
 api_call = unittest.skipIf(False, 'Skip the test that access the gitlab API')
 ROOT_PATH = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 ENV_VAR_PATH = os.path.join(ROOT_PATH, "gitlab.env")
