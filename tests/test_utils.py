@@ -12,7 +12,7 @@ class UtilsTest(unittest.TestCase):
         self.assertEqual({'http': "test", 'https': "test"}, result)
 
     def test_003_no_token_raise_exception(self):
-        with mock.patch.dict(os.environ, clear=True):
+        with mock.patch.dict('os.environ', clear=True):
             self.assertRaises(KeyError, check_token(None))
 
     # -- Project name and id

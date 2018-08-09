@@ -12,26 +12,19 @@ class CLITest(unittest.TestCase):
 
     @tests.api_call
     def test_100_parse_args(self):
-        if tests.PROXY:
-            testargs = ['', str(tests.PROJECT_ID), '-p', tests.PROXY]
-        else:
-            testargs = ['', str(tests.PROJECT_ID)]
-        with patch.object(sys, 'argv', testargs):
-            result = main()
-            self.assertEqual(result, 0)
+        test_args = ['gitlab_stats', str(tests.PROJECT_ID)]
+        with patch.object(sys, 'argv', test_args):
+            main()
 
     @tests.api_call
     def test_101_print_report(self):
-        if tests.PROXY:
-            testargs = ['', str(tests.PROJECT_ID), '-p', tests.PROXY, '-r']
-        else:
-            testargs = ['', str(tests.PROJECT_ID), '-r']
-        with patch.object(sys, 'argv', testargs):
+        test_args = ['-r', str(tests.PROJECT_ID)]
+        with patch.object(sys, 'argv', test_args):
             main()
-            self.assertTrue(os.path.isfile('output.csv'))
+        self.assertTrue(os.path.isfile('output.csv'))
 
     def test_102_run_main(self):
-        result = os.system("python "+tests.ROOT_PATH+"/gitlab_stats/cli.py -h")
+        result = os.system("python {}/gitlab_stats/cli.py -h".format(tests.ROOT_PATH))
         self.assertEqual(result, 0)
 
     def test_200_parser_id(self):
