@@ -5,6 +5,7 @@ from datetime import datetime
 api_call = unittest.skipIf(False, 'Skip the test that access the gitlab API')
 ROOT_PATH = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 ENV_VAR_PATH = os.path.join(ROOT_PATH, "gitlab.env")
+PROXIES = {'http': '', 'https': ''}
 
 PROJECT_ID = 4895805
 PROJECT_NAME = "integration-tests"
