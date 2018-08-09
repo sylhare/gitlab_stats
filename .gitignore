@@ -1,13 +1,12 @@
 *.env
 *.pyc
-/gitlab_stats.egg-info/
+/gitlab_stats.egg-info/*
 /dist/
 /build/
 /.pytest_cache/
 /.eggs/
 /tests/.pytest_cache/
 /.coverage
-gitlab_stats.egg-info/*
 .DS_Store
 .idea/*
 .cache/*
