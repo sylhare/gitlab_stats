@@ -5,7 +5,7 @@ with open('README.rst') as file:
 
 setup(name='gitlab-stats',
       version='1.1.4',
-      description='Get gitlab stats',
+      description='CLI to get pipeline stats from gitlab API v4 using gitlab project ID',
       long_description=long_description,
       classifiers=[
           'Development Status :: 4 - Beta',
