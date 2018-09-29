@@ -68,17 +68,17 @@ Here is the help when ``gitlab_stats -h``:
                                'http://my.proxy.url:8083'
 
 .. |Github| image:: https://img.shields.io/badge/github-gitlab_stats-blue.svg
-   :target: https://github.com/Sylhare/gitlab_stats
+   :target: https://github.com/sylhare/gitlab_stats
 .. |PyPI version| image:: https://badge.fury.io/py/gitlab-stats.svg
    :target: https://pypi.org/project/gitlab-stats/
 .. |Gitlab| image:: https://img.shields.io/badge/gitlab_api-v4-orange.svg
-   :target: https://github.com/Sylhare/gitlab_stats
+   :target: https://github.com/sylhare/gitlab_stats
 .. |Python| image:: https://img.shields.io/badge/python-3.6.x-yellow.svg
-   :target: https://github.com/Sylhare/gitlab_stats
-.. |Build Status| image:: https://travis-ci.org/Sylhare/gitlab_stats.svg?branch=master
-   :target: https://travis-ci.org/Sylhare/gitlab_stats
+   :target: https://github.com/sylhare/gitlab_stats
+.. |Build Status| image:: https://travis-ci.org/sylhare/gitlab_stats.svg?branch=master
+   :target: https://travis-ci.org/sylhare/gitlab_stats
 .. |codecov| image:: https://codecov.io/gh/Sylhare/gitlab_stats/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/Sylhare/gitlab_stats
+   :target: https://codecov.io/gh/sylhare/gitlab_stats
 .. |Codacy Badge| image:: https://api.codacy.com/project/badge/Grade/d31f29a89e4f4c929b945d931ba1db26
-   :target: https://www.codacy.com/app/Sylhare/gitlab_stats?utm_source=github.com&utm_medium=referral&utm_content=Sylhare/gitlab_stats&utm_campaign=Badge_Grade
-.. |General project settings| image:: https://github.com/Sylhare/gitlab_stats/blob/master/docs/screenshot.png?raw=true
+   :target: https://www.codacy.com/app/sylhare/gitlab_stats?utm_source=github.com&utm_medium=referral&utm_content=sylhare/gitlab_stats&utm_campaign=Badge_Grade
+.. |General project settings| image:: https://github.com/sylhare/gitlab_stats/blob/master/docs/screenshot.png?raw=true
