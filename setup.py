@@ -4,7 +4,7 @@ with open('README.rst') as file:
     long_description = file.read()
 
 setup(name='gitlab-stats',
-      version='1.1.4',
+      version='1.1.5',
       description='CLI to get pipeline stats from gitlab API v4 using gitlab project ID',
       long_description=long_description,
       classifiers=[
