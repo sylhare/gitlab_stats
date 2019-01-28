@@ -71,16 +71,26 @@ Here is the help when ``gitlab_stats -h``:
                                 'http://my.proxy.url:8083'
 
 Important Note:
+~~~~~~~~~~~~~~~
 
 You will need an access token set up as an enviroment varable to reach
 your gitlab.
 
 To get an access token based on your personal credentials go to your
-gitlab server: Account->Settings->Access Tokens
+gitlab server ``[Account] -> [Settings] -> [Access Tokens]``
 
-Then give it a name and click "Create personal access token"
+.. figure:: https://github.com/Sylhare/gitlab_stats/blob/master/docs/token.png?raw=true
+   :alt: General project settings
 
-Save this token somewhere safe then in bash: export GITLAB\_TOKEN=
+   General project settings
+
+Then give it a name and click ``Create personal access token``.
+
+Save this token somewhere safe then in bash:
+
+.. code:: bash
+
+    export GITLAB_TOKEN=<token>
 
 .. |Github| image:: https://img.shields.io/badge/github-gitlab_stats-blue.svg
    :target: https://github.com/Sylhare/gitlab_stats

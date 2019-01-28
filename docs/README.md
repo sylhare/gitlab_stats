@@ -65,14 +65,18 @@ optional arguments:
                             'http://my.proxy.url:8083'
 ```
 
-Important Note:
+### Important Note:
 
 You will need an access token set up as an enviroment varable to reach your gitlab.
 
-To get an access token based on your personal credentials go to your gitlab server:
-Account->Settings->Access Tokens
+To get an access token based on your personal credentials go to your gitlab server `[Account] -> [Settings] -> [Access Tokens]`
 
-Then give it a name and click "Create personal access token"
+![General project settings](https://github.com/Sylhare/gitlab_stats/blob/master/docs/token.png?raw=true)
 
-Save this token somewhere safe then in bash: export GITLAB_TOKEN=<token>
+Then give it a name and click `Create personal access token`.
+
+Save this token somewhere safe then in bash: 
+```bash
+export GITLAB_TOKEN=<token>
+```
 
