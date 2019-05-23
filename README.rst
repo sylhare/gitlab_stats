@@ -77,7 +77,9 @@ You will need an access token set up as an enviroment varable to reach
 your gitlab.
 
 To get an access token based on your personal credentials go to your
-gitlab server ``[Account] -> [Settings] -> [Access Tokens]``
+gitlab server:
+
+`[Account] -> [Settings] -> [Access Tokens]`
 
 .. figure:: https://github.com/Sylhare/gitlab_stats/blob/master/docs/token.png?raw=true
    :alt: General project settings
