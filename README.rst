@@ -70,10 +70,29 @@ Here is the help when ``gitlab_stats -h``:
       -p PROXY, --proxy PROXY   Add the url of your proxy like
                                 'http://my.proxy.url:8083'
 
+You can save proxy with ``HTTP_PROXY`` or gitlab url with
+``GITLAB_URL``.
+
+Docker
+~~~~~~
+
+To build the docker use:
+
+.. code:: bash
+
+    docker build -t gitlab_stats . --build-arg token="your token" --build-arg proxy="your proxy" --build-arg gitlab="gitlab url"
+
+To run the docker use:
+
+.. code:: bash
+
+    # Having set the token, the proxy and the url when building it:
+    docker run -it exec gitlab_stats bash gitlab_stats project_id
+
 Important Note:
 ~~~~~~~~~~~~~~~
 
-You will need an access token set up as an enviroment varable to reach
+You will need an access token set up as an environment variable to reach
 your gitlab.
 
 To get an access token based on your personal credentials go to your

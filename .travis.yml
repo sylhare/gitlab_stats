@@ -18,6 +18,7 @@ install:
 # commands to run tests
 script:
   - coverage run --source=gitlab_stats -m unittest
+  - python -m pytest --cov=gitlab_stats tests/
   - python setup.py test
 
 after_success:
