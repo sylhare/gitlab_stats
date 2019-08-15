@@ -19,7 +19,7 @@ class MockGitlabServer(BaseHTTPRequestHandler):
     def do_GET(self):
         """ Default get handler method of BaseHTTPRequestHandler """
         if self.headers['PRIVATE-TOKEN'] == 'wrong token':  # 004
-            self.wrong_token_response()
+            self.response(requests.codes.not_found)
         elif re.search(self.PIPELINE, self.path) and re.search(self.PER_PAGE, self.path):  # 013, 020
             self.send_all_pipeline()
         elif re.search(self.PROJECTS, self.path) and re.search(self.PER_PAGE, self.path):  # 011, 012
@@ -29,19 +29,12 @@ class MockGitlabServer(BaseHTTPRequestHandler):
         elif re.search(self.THE_PROJECT, self.path):  # 010, 015
             self.send_project()
         elif re.search(self.PROJECTS, self.path):  # 002
-            self.default_answer()
+            self.response(requests.codes.ok)
         else:
             self.send_response(requests.codes.not_found)
 
-    def wrong_token_response(self):
-        self.send_response(requests.codes.not_found)
-        self.send_header('Content-Type', 'application/json; charset=utf-8')
-        self.end_headers()
-        response_content = json.dumps([{}])
-        self.wfile.write(response_content.encode('utf-8'))
-
-    def default_answer(self):
-        self.send_response(requests.codes.ok)
+    def response(self, response):
+        self.send_response(response)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.end_headers()
         response_content = json.dumps([{}])

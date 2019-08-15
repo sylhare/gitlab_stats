@@ -24,6 +24,16 @@ class CLITest(unittest.TestCase):
         with patch.object(sys, 'argv', test_args):
             main()
         self.assertTrue(os.path.isfile('output.csv'))
+        os.remove('output.csv')
+
+    @tests.api_call
+    def test_102_print_report(self):
+        test_args = ['', '-r', str(tests.PROJECT_ID), '-u', self.mock_users_url]
+        with self.assertRaises(ConnectionError):
+            with patch.dict('os.environ', {'HTTP_PROXY': "https://myproxy.com"}):
+                with patch.object(sys, 'argv', test_args):
+                    main()
+        self.assertFalse(os.path.isfile('output.csv'))
 
     def test_200_parser_id(self):
         parser = parse_args(['123'])

@@ -88,10 +88,12 @@ class UtilsTest(unittest.TestCase):
         self.assertTrue('duration_in_minutes' in response)
         self.assertTrue('success_percentage' in response)
 
-    def test_57_get_report(self):
+    def test_057_get_report(self):
         with mock.patch('sys.stdout', new=StringIO()) as output:
             print_cli_report(tests.PROJECT_INFO_ENHANCED)
             self.assertEqual(output.getvalue().strip()[0], tests.REPORT[0])
+
+    # -- Report
 
     def test_220_create_a_csv(self):
         create_dict_to_csv(tests.PROJECT_INFO_ENHANCED, 'output.csv')

@@ -13,7 +13,7 @@ class WrapperTest(unittest.TestCase):
         self.mock_server_port = get_free_port()
         start_mock_server(self.mock_server_port, MockGitlabServer)
         mock_users_url = 'http://localhost:{port}'.format(port=self.mock_server_port)
-        self.gaw = API(base_url=mock_users_url, proxies=tests.PROXIES)
+        self.gaw = API(base_url=mock_users_url, proxies='')
 
     def tearDown(self):
         elapsed = time.time() - self._started_at

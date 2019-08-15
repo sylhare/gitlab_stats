@@ -8,6 +8,7 @@ Generate a report from gitlab's pipeline metrics
 for help:    gitlab_stats -h
 """
 import argparse
+import os
 import sys
 
 from gitlab_stats import utils
@@ -28,11 +29,18 @@ def parse_args(args):
                         nargs=1,
                         help="Put the url of your gitlab instance if different from https://gitlab.com")
     parser.add_argument("-p", "--proxy",
-                        default=[''],
+                        default=get_env_proxy(),
                         nargs=1,
                         help="Add the url of your proxy like 'http://my.proxy.url:8083'")
 
     return parser.parse_args(args)
+
+
+def get_env_proxy():
+    try:
+        return os.environ['HTTP_PROXY']
+    except KeyError:
+        return ['']
 
 
 def main():
