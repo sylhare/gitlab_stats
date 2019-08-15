@@ -27,20 +27,30 @@ class CLITest(unittest.TestCase):
         os.remove('output.csv')
 
     @tests.api_call
-    def test_102_print_report(self):
+    def test_102_cli_proxy(self):
         test_args = ['', '-r', str(tests.PROJECT_ID), '-u', self.mock_users_url]
-        with self.assertRaises(ConnectionError):
+        with self.assertRaises(Exception):
             with patch.dict('os.environ', {'HTTP_PROXY': "https://myproxy.com"}):
                 with patch.object(sys, 'argv', test_args):
                     main()
         self.assertFalse(os.path.isfile('output.csv'))
 
+    @tests.api_call
+    def test_103_cli_other_gitlab(self):
+        test_args = ['', '-r', str(tests.PROJECT_ID)]
+        with patch.dict('os.environ', {'GITLAB_URL': self.mock_users_url}):
+            with patch.object(sys, 'argv', test_args):
+                main()
+        self.assertTrue(os.path.isfile('output.csv'))
+        os.remove('output.csv')
+
     def test_200_parser_id(self):
-        parser = parse_args(['123'])
-        self.assertEqual(parser.id, '123')
-        self.assertFalse(parser.report)
-        self.assertEqual(parser.url, ['https://gitlab.com'])
-        self.assertEqual(parser.proxy, [''])
+        with patch.dict('os.environ', {'GITLAB_URL': self.mock_users_url}):
+            parser = parse_args(['123'])
+            self.assertEqual(parser.id, '123')
+            self.assertFalse(parser.report)
+            self.assertEqual(parser.url, [self.mock_users_url])
+            self.assertEqual(parser.proxy, [''])
 
     def test_201_parser_id_with_url(self):
         parser = parse_args(['123', '-u', 'https://myurl.com'])

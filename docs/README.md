@@ -65,6 +65,8 @@ optional arguments:
                             'http://my.proxy.url:8083'
 ```
 
+You can save proxy with `HTTP_PROXY` or gitlab url with `GITLAB_URL`.
+
 ### Important Note:
 
 You will need an access token set up as an enviroment varable to reach your gitlab.

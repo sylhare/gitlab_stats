@@ -25,22 +25,23 @@ def parse_args(args):
                         default=False,
                         help="Generate a report in csv")
     parser.add_argument("-u", "--url",
-                        default=['https://gitlab.com'],
+                        default=get_env('GITLAB_URL', default="https://gitlab.com"),
                         nargs=1,
                         help="Put the url of your gitlab instance if different from https://gitlab.com")
     parser.add_argument("-p", "--proxy",
-                        default=get_env_proxy(),
+                        default=get_env('HTTP_PROXY'),
                         nargs=1,
                         help="Add the url of your proxy like 'http://my.proxy.url:8083'")
 
     return parser.parse_args(args)
 
 
-def get_env_proxy():
-    try:
-        return os.environ['HTTP_PROXY']
-    except KeyError:
-        return ['']
+def get_env(value, default=''):
+    v = os.environ.get(value)
+    if v is not None:
+        return [v]
+    else:
+        return [default]
 
 
 def main():

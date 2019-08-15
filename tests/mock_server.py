@@ -31,7 +31,7 @@ class MockGitlabServer(BaseHTTPRequestHandler):
         elif re.search(self.PROJECTS, self.path):  # 002
             self.response(requests.codes.ok)
         else:
-            self.send_response(requests.codes.not_found)
+            self.response(requests.codes.not_found)
 
     def response(self, response):
         self.send_response(response)
