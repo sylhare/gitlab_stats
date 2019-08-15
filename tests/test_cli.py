@@ -1,8 +1,9 @@
 import os
-import tests
 import unittest
-from gitlab_stats.cli import *
 from unittest.mock import patch
+
+import tests
+from gitlab_stats.cli import *
 
 
 class CLITest(unittest.TestCase):

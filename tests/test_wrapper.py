@@ -1,6 +1,7 @@
-import tests
 import time
 import unittest
+
+import tests
 from gitlab_stats.wrapper import API
 
 

@@ -1,7 +1,8 @@
-import tests
 import unittest
 from io import StringIO
 from unittest import mock
+
+import tests
 from gitlab_stats.utils import *
 
 

@@ -1,5 +1,6 @@
-from gitlab_stats.utils import *
 import requests
+
+from gitlab_stats.utils import *
 
 
 class API(object):
@@ -14,7 +15,7 @@ class API(object):
 
         token = check_token(token)
         self._proxies = proxies
-        self._header = {'Content-Type': 'application/json', 'PRIVATE-TOKEN': '{0}'.format(token)}
+        self._header = {'Content-Type': 'application/json', 'PRIVATE-TOKEN': '{}'.format(token)}
         self.base_url = base_url
 
     def get(self, url):
@@ -71,9 +72,8 @@ class API(object):
 
     def get_basic_project_info(self, project_id):
         project = {'id': project_id,
-                    'name': self.get_project_name(project_id),
-                    'pipelines': self.get_all_pipelines_info(project_id)
-                    }
+                   'name': self.get_project_name(project_id),
+                   'pipelines': self.get_all_pipelines_info(project_id)}
         return project
 
     def get_enhanced_project_info(self, project_id):
@@ -85,4 +85,3 @@ class API(object):
     def get_stats_report(self, project_id):
         enhanced_info = self.get_enhanced_project_info(project_id)
         print_cli_report(enhanced_info)
-

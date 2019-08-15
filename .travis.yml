@@ -1,6 +1,6 @@
 language: python
 python:
-    - "3.6"
+  - "3.6"
 
 env:
   global:
@@ -21,10 +21,10 @@ script:
   - python setup.py test
 
 after_success:
-#  - pandoc --from=markdown --to=rst --output=README.rst docs/README.md    # To remember how to generate .rst
-#  - python setup.py sdist bdist_wheel                                     # Create python package
-#  - twine upload dist/*                                                   # Upload package
-#  - coverage report -m                                                    # Check coverage
+  #  - pandoc --from=markdown --to=rst --output=README.rst docs/README.md    # To remember how to generate .rst
+  #  - python setup.py sdist bdist_wheel                                     # Create python package
+  #  - twine upload dist/*                                                   # Upload package
+  #  - coverage report -m                                                    # Check coverage
   - codecov
   - coverage xml                                                           # Generate xml of coverage
   - python-codacy-coverage -r coverage.xml

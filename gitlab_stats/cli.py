@@ -7,8 +7,9 @@ Generate a report from gitlab's pipeline metrics
 
 for help:    gitlab_stats -h
 """
-import sys
 import argparse
+import sys
+
 from gitlab_stats import utils
 from gitlab_stats.wrapper import API
 

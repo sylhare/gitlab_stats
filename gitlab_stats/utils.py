@@ -1,6 +1,7 @@
-import os
 import csv
 import datetime
+import os
+
 import gitlab_stats
 
 GITLAB_TOKEN_ENV = 'GITLAB_TOKEN'
@@ -41,8 +42,7 @@ def get_pipeline_info(elem):
     pipeline_info = {'id': elem['id'],
                      'status': elem['status'],
                      'duration': elem['duration'],
-                     'date': str(elem['finished_at'])[:10]
-                     }
+                     'date': str(elem['finished_at'])[:10]}
     return pipeline_info
 
 
