@@ -27,7 +27,6 @@ class API(object):
                 raise ConnectionError("\nCan't get to the gitlab api \n"
                                       "- check your token in GITLAB_TOKEN\n"
                                       "- Check the URL, default is https://gitlab.com")
-
             return response
 
     def get_through_page(self, url, action, pages=1):

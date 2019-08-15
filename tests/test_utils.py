@@ -39,7 +39,7 @@ class UtilsTest(unittest.TestCase):
         response = get_pipelines_id(tests.PIPELINES)
         self.assertEqual(type(response), list)
         self.assertEqual(len(response), 4)
-        self.assertEqual(response[0], 34692)
+        self.assertEqual(response[0], 33409)
 
     def test_042_get_pipeline_info_in_a_dict(self):
         response = get_pipeline_info(tests.PIPELINE_INFO)

@@ -4,9 +4,15 @@ from unittest.mock import patch
 
 import tests
 from gitlab_stats.cli import *
+from tests.mock_server import start_mock_server, get_free_port, MockGitlabServer
 
 
 class CLITest(unittest.TestCase):
+
+    def setUp(self):
+        self.mock_server_port = get_free_port()
+        start_mock_server(self.mock_server_port, MockGitlabServer)
+        self.mock_users_url = 'http://localhost:{port}'.format(port=self.mock_server_port)
 
     def test_100_run_main(self):
         result = os.system("python {}/gitlab_stats/cli.py -h".format(tests.ROOT_PATH))
@@ -14,7 +20,7 @@ class CLITest(unittest.TestCase):
 
     @tests.api_call
     def test_101_print_report(self):
-        test_args = ['', '-r', str(tests.PROJECT_ID)]
+        test_args = ['', '-r', str(tests.PROJECT_ID), '-u', self.mock_users_url]
         with patch.object(sys, 'argv', test_args):
             main()
         self.assertTrue(os.path.isfile('output.csv'))

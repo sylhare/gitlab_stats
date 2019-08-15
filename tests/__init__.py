@@ -17,13 +17,6 @@ PROJECT = [
      "forks_count": 0, "last_activity_at": "2018-06-15T14:42:54.278Z"}
 ]
 
-PIPELINES = [
-    {'id': 34692, "sha": "111edcb12207aec17aca660e957269fcc1a06356", "ref": "master", "status": "canceled"},
-    {"id": 34501, "sha": "1cb7a4d8b1469a303dqqwe56877068610b9fdcb0", "ref": "master", "status": "success"},
-    {"id": 34155, "sha": "b15e77c55bba9783fbwwqa24f17a304d86dde54c", "ref": "master", "status": "failed"},
-    {"id": 32026, "sha": "6f52ae30eb543adecb81c74ca60253e62bcc586d", "ref": "master", "status": "skipped"},
-]
-
 PIPELINE_INFO = {
     "id": 33409, "sha": "d724e231065505afgwr2e6909e3baf4f90278", "ref": "master", "status": "success",
     "before_sha": "9396e122692cd0aa7a9c2dsfsb8f8efe97cc56", "tag": False, "yaml_errors": None,
@@ -32,6 +25,33 @@ PIPELINE_INFO = {
     "updated_at": "2018-06-11T21:46:49.364Z", "started_at": "2018-06-11T21:45:49.574Z",
     "finished_at": "2018-06-11T21:46:49.359Z", "committed_at": None, "duration": 59, "coverage": None
 }
+
+PIPELINES_ALL = [
+    {"id": 33409, "sha": "1cb7a4d8b1469a303dqqwe56877068610b9fdcb0", "ref": "master", "status": "success"},
+]
+
+PIPELINES = [
+    {"id": 33409, "sha": "1cb7a4d8b1469a303dqqwe56877068610b9fdcb0", "ref": "master", "status": "success"},
+    {"id": 34501, "sha": "1cb7a4d8b1469a303dqqwe56877068610b9fdcb0", "ref": "master", "status": "success"},
+    {"id": 34155, "sha": "b15e77c55bba9783fbwwqa24f17a304d86dde54c", "ref": "master", "status": "failed"},
+    {"id": 32026, "sha": "6f52ae30eb543adecb81c74ca60253e62bcc586d", "ref": "master", "status": "skipped"},
+]
+
+PROJECT_ALL = [
+    {"id": 4895805, "description": "", "name": "integration-tests", "name_with_namespace": "integration-tests",
+     "path": "path to project", "path_with_namespace": "I am getting bored of this",
+     "created_at": "2018-06-08T18:18:39.029Z", "default_branch": "master",
+     "forks_count": 0, "last_activity_at": "2018-06-15T14:42:54.278Z"},
+    {"id": 4895806, "description": "", "name": "integration-tests", "name_with_namespace": "integration-tests",
+     "path": "path to project", "path_with_namespace": "I am getting bored of this",
+     "created_at": "2018-06-08T18:18:39.029Z", "default_branch": "master",
+     "forks_count": 0, "last_activity_at": "2018-06-15T14:42:54.278Z"},
+    {"id": 4895807, "description": "", "name": "integration-tests",
+     "name_with_namespace": "integration-tests",
+     "path": "path to project", "path_with_namespace": "I am getting bored of this",
+     "created_at": "2018-06-08T18:18:39.029Z", "default_branch": "master",
+     "forks_count": 0, "last_activity_at": "2018-06-15T14:42:54.278Z"}
+]
 
 # Duration moy - 58.9
 PROJECT_INFO = {

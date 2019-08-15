@@ -3,13 +3,17 @@ import unittest
 
 import tests
 from gitlab_stats.wrapper import API
+from tests.mock_server import start_mock_server, get_free_port, MockGitlabServer
 
 
 class WrapperTest(unittest.TestCase):
 
     def setUp(self):
-        self.gaw = API(base_url="https://gitlab.com", proxies=tests.PROXIES)
         self._started_at = time.time()
+        self.mock_server_port = get_free_port()
+        start_mock_server(self.mock_server_port, MockGitlabServer)
+        mock_users_url = 'http://localhost:{port}'.format(port=self.mock_server_port)
+        self.gaw = API(base_url=mock_users_url, proxies=tests.PROXIES)
 
     def tearDown(self):
         elapsed = time.time() - self._started_at
@@ -26,7 +30,7 @@ class WrapperTest(unittest.TestCase):
     @tests.api_call
     def test_004_wrong_token_raise_error(self):
         with self.assertRaises(ConnectionError):
-            self.gaw._header = {'Content-Type': 'application/json', 'PRIVATE-TOKEN': '{0}'.format("wrong token")}
+            self.gaw._header = {'Content-Type': 'application/json', 'PRIVATE-TOKEN': '{}'.format("wrong token")}
             self.gaw.get_project_name(tests.PROJECT_ID)
 
     # -- Get project info
