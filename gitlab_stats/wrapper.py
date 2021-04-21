@@ -1,6 +1,6 @@
 import requests
 
-from gitlab_stats.utils import *
+from gitlab_stats.utils import check_token
 
 
 class API(object):

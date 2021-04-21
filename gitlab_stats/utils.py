@@ -2,7 +2,6 @@ import csv
 import datetime
 import os
 
-import gitlab_stats
 
 GITLAB_TOKEN_ENV = 'GITLAB_TOKEN'
 
@@ -23,17 +22,15 @@ def format_proxy(url):
 
 
 def get_name_and_id(project_dict):
-    project_info = []
-    for elem in project_dict:
-        project_info.append({'id': elem['id'], 'name': elem['name']})
+    project_info = [
+        {'id': elem['id'], 'name': elem['name']} for elem in project_dict
+    ]
 
     return project_info
 
 
 def get_pipelines_id(pipeline_dict):
-    pipelines = []
-    for elem in pipeline_dict:
-        pipelines.append(elem['id'])
+    pipelines = [elem['id'] for elem in pipeline_dict]
 
     return pipelines
 
@@ -59,7 +56,7 @@ def get_duration_moy(project_info):
 
 
 def get_success_percentage(project_info):
-    success = list((pipeline['status'] for pipeline in project_info['pipelines']))
+    success = [pipeline['status'] for pipeline in project_info['pipelines']]
 
     return round(success.count('success') * 100 / len(success)) if len(success) else None
 
