@@ -2,6 +2,8 @@ import csv
 import datetime
 import os
 
+import gitlab_stats
+
 
 GITLAB_TOKEN_ENV = 'GITLAB_TOKEN'
 
