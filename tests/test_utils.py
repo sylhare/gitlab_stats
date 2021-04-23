@@ -14,7 +14,8 @@ class UtilsTest(unittest.TestCase):
 
     def test_003_no_token_raise_exception(self):
         with mock.patch.dict('os.environ', clear=True):
-            self.assertRaises(KeyError, check_token(None))
+            token = check_token(None)
+            self.assertEqual(None, token)
 
     # -- Project name and id
 
